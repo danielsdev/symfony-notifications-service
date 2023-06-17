@@ -34,9 +34,9 @@ class Notification
         $this->recipientId = $recipientId;
     }
 
-    public function content(): Content
+    public function content(): string
     {
-        return $this->content;
+        return $this->content->getContent();
     }
 
     public function setContent(Content $content): void

@@ -24,6 +24,11 @@ class Content
         return $this->content;
     }
 
+    public function getContent(): string
+    {
+        return $this->content;
+    }
+
     private function isValidContentLength(string $content): bool
     {
         return strlen($content) >= 5 && strlen($content) <= 248;

@@ -16,7 +16,7 @@ interface NotificationRepository
 
     // public function fincountManyByRecipientIddById(string $recipientId): int;
 
-    // public function findManyByRecipientId(string $recipientId): iterable;
+    public function findManyByRecipientId(string $recipientId): iterable;
 
     // public function list(): iterable;
 }

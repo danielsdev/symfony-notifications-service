@@ -12,6 +12,8 @@ use Exception;
 
 final class DoctrineNotificationRepository implements NotificationRepository
 {
+    private const ENTITY = Notification::class;
+
     public function __construct(private EntityManagerInterface $entityManager)
     {
     }
@@ -27,5 +29,14 @@ final class DoctrineNotificationRepository implements NotificationRepository
         } catch (Exception $exception) {
             throw new GenericNotificationException($exception);
         }
+    }
+
+    public function findManyByRecipientId(string $recipientId): iterable
+    {
+        return $this->entityManager
+            ->getRepository(self::ENTITY)
+            ->findBy([
+                'recipientId' => $recipientId,
+            ]);
     }
 }

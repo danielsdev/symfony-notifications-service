@@ -18,6 +18,13 @@ framework:
     php_errors:
         log: true
 
+    serializer:
+        enabled: true
+        enable_annotations: false
+        mapping:
+            paths:
+                - '%kernel.project_dir%/config/mapping/serializer'
+
 when@test:
     framework:
         test: true

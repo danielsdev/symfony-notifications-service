@@ -11,9 +11,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CreateNotificationController extends AbstractController
 {
     public function __construct(private SendNotification $sendNotification)
-    {
-        
+    {        
     }
+
     #[Route('/notifications', name: 'create_notification', methods:['POST'])]
     public function __invoke(Request $request): Response
     {
@@ -22,7 +22,7 @@ class CreateNotificationController extends AbstractController
         
         return $this->json(
             $notification,
-            Response::HTTP_OK,
+            Response::HTTP_CREATED,
         );
     }
 }
