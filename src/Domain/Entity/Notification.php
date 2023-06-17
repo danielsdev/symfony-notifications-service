@@ -13,8 +13,8 @@ class Notification
         private string $recipientId,
         private Content $content,
         private string $category,
-        private ?\DateTimeInterface $readAt,
-        private ?\DateTimeInterface $canceledAt,
+        private ?\DateTimeInterface $readAt = null,
+        private ?\DateTimeInterface $canceledAt = null,
         private \DateTimeImmutable $createdAt
     ) {
     }
