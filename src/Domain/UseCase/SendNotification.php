@@ -28,7 +28,7 @@ class SendNotification
             new DateTimeImmutable()
         );
 
-        $this->repository->create($notification);
+        $this->repository->save($notification);
 
         return $notification;
     }

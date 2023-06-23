@@ -8,9 +8,9 @@ use App\Domain\Entity\Notification;
 
 interface NotificationRepository
 {
-    public function create(Notification $notification): void;
+    public function save(Notification $notification): void;
 
-    // public function findById(string $notificationId): ?Notification;
+    public function findById(string $notificationId): ?Notification;
 
     // public function save(Notification $notification): ?Notification;
 

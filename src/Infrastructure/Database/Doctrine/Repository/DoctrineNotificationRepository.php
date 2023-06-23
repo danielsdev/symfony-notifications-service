@@ -21,7 +21,7 @@ final class DoctrineNotificationRepository implements NotificationRepository
     /**
      * @throws GenericNotificationException
      */
-    public function create(Notification $notification): void
+    public function save(Notification $notification): void
     {
         try {
             $this->entityManager->persist($notification);
@@ -29,6 +29,13 @@ final class DoctrineNotificationRepository implements NotificationRepository
         } catch (Exception $exception) {
             throw new GenericNotificationException($exception);
         }
+    }
+
+    public function findById(string $notificationId): ?Notification
+    {
+        return $this->entityManager
+            ->getRepository(self::ENTITY)
+            ->find($notificationId);
     }
 
     public function findManyByRecipientId(string $recipientId): iterable

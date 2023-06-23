@@ -76,7 +76,7 @@ class Notification
 
     public function cancel(): void
     {
-        $this->canceledAt = new \DateTime();
+        $this->canceledAt = new \DateTimeImmutable();
     }
 
     public function createdAt(): \DateTimeImmutable
